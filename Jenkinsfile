@@ -38,7 +38,7 @@ pipeline {
 				script { 
 					if (branch == 'main' || branch == 'dev'){
 						sh '''
-							mvn clean deploy -s settings.xml
+							mvn clean deploy -P$branch-s settings.xml
 						'''
 					} else {
 						sh '''
